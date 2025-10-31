@@ -8,19 +8,6 @@ public class Usuario {
     private Rol rol;
     private boolean activo;
 
-    //Metodos
-    public boolean autenticar(String user, String pass){
-
-        return false;
-    };
-    public boolean tienePermiso(String accion){
-
-        return false;
-    };
-
-    //Constructores
-
-
     public Usuario() {
     }
 
@@ -31,39 +18,23 @@ public class Usuario {
         this.activo = activo;
     }
 
-
-    //Getters and Setters
-
-
-    public String getUsername() {
-        return username;
+    public boolean autenticar(String user, String pass){
+        return this.username.equals(user) && this.password.equals(pass) && this.activo;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public boolean tienePermiso(String accion){
+        return true; // Lógica de permisos dependerá del Enum Rol y la acción
     }
 
-    public String getPassword() {
-        return password;
-    }
+    public String getUsername() { return username; }
+    public void setUsername(String username) { this.username = username; }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
 
-    public Rol getRol() {
-        return rol;
-    }
+    public Rol getRol() { return rol; }
+    public void setRol(Rol rol) { this.rol = rol; }
 
-    public void setRol(Rol rol) {
-        this.rol = rol;
-    }
-
-    public boolean isActivo() {
-        return activo;
-    }
-
-    public void setActivo(boolean activo) {
-        this.activo = activo;
-    }
+    public boolean isActivo() { return activo; }
+    public void setActivo(boolean activo) { this.activo = activo; }
 }

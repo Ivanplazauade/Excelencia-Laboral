@@ -5,6 +5,8 @@ import modelo.Clases.Postulante;
 import modelo.Clases.ProcesoSeleccion;
 import modelo.enums.EstadoPostulacion;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Postulacion {
 
@@ -13,67 +15,44 @@ public class Postulacion {
     private EstadoPostulacion estado;
     private Postulante postulante;
     private ProcesoSeleccion proceso;
-    private Evaluacion evaluacion;
+    private List<Evaluacion> evaluaciones; // Cambiado a 1..*
 
-    // ====== Constructores ======
     public Postulacion(int idPostulacion, Postulante postulante, ProcesoSeleccion proceso) {
         this.idPostulacion = idPostulacion;
         this.postulante = postulante;
         this.proceso = proceso;
         this.fechaPostulacion = LocalDate.now();
-        this.estado = EstadoPostulacion.NUEVA; // 👈 inicializa con NUEVA
-    }
-
-    public Postulacion() {
-        this.fechaPostulacion = LocalDate.now();
         this.estado = EstadoPostulacion.NUEVA;
+        this.evaluaciones = new ArrayList<>();
     }
 
-    // ====== Métodos de negocio ======
-
-    /** Asigna la evaluación realizada a esta postulación. */
-    public void asignarEvaluacion(Evaluacion evaluacion) {
-        this.evaluacion = evaluacion;
+    public void agregarEvaluacion(Evaluacion evaluacion) {
+        this.evaluaciones.add(evaluacion);
         this.estado = EstadoPostulacion.EN_EVALUACION;
     }
 
-    /** Cambia el estado según los resultados del proceso. */
     public void cambiarEstado(EstadoPostulacion nuevoEstado) {
         this.estado = nuevoEstado;
     }
 
-    // ====== Getters y Setters ======
-
     public int getIdPostulacion() { return idPostulacion; }
-
     public void setIdPostulacion(int idPostulacion) { this.idPostulacion = idPostulacion; }
 
     public LocalDate getFechaPostulacion() { return fechaPostulacion; }
-
     public void setFechaPostulacion(LocalDate fechaPostulacion) { this.fechaPostulacion = fechaPostulacion; }
 
     public EstadoPostulacion getEstado() { return estado; }
-
     public void setEstado(EstadoPostulacion estado) { this.estado = estado; }
 
     public Postulante getPostulante() { return postulante; }
-
     public void setPostulante(Postulante postulante) { this.postulante = postulante; }
 
     public ProcesoSeleccion getProceso() { return proceso; }
-
     public void setProceso(ProcesoSeleccion proceso) { this.proceso = proceso; }
 
-    public Evaluacion getEvaluacion() { return evaluacion; }
+    public List<Evaluacion> getEvaluaciones() { return evaluaciones; }
+    public void setEvaluaciones(List<Evaluacion> evaluaciones) { this.evaluaciones = evaluaciones; }
 
-    public void setEvaluacion(Evaluacion evaluacion) { this.evaluacion = evaluacion; }
-
-    /** Alias para compatibilidad con GestorPostulaciones */
-    public int getId() {
-        return idPostulacion;
-    }
-
-    // ====== Métodos auxiliares ======
     @Override
     public String toString() {
         return "Postulacion{id=" + idPostulacion +

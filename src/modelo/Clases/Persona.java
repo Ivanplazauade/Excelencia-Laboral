@@ -1,7 +1,6 @@
 package modelo.Clases;
 
-public abstract class  Persona {
-    //Atributos de cada persona
+public abstract class Persona {
     protected int idPersona;
     protected String nombre;
     protected String apellido;
@@ -9,16 +8,6 @@ public abstract class  Persona {
     protected String email;
     protected String telefono;
     protected Direccion direccion;
-
-    public Persona(int id, String nombre, String apellido, String email, Direccion direccion) {
-    }
-
-
-    //Metodos posibles
-    public abstract String getNombreCompleto();
-    public abstract String getTipoPersona();
-
-    //Constructores
 
     public Persona() {
     }
@@ -33,62 +22,22 @@ public abstract class  Persona {
         this.direccion = direccion;
     }
 
-    //Getters y setters
+    public abstract String getNombreCompleto();
+    public abstract String getTipoPersona();
 
+    public int getIdPersona() { return idPersona; }
+    public String getNombre() { return nombre; }
+    public String getApellido() { return apellido; }
+    public String getDni() { return dni; }
+    public String getEmail() { return email; }
+    public String getTelefono() { return telefono; }
+    public Direccion getDireccion() { return direccion; }
 
-    public int getIdPersona() {
-        return idPersona;
-    }
-
-    public void setIdPersona(int idPersona) {
-        this.idPersona = idPersona;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public String getDni() {
-        return dni;
-    }
-
-    public void setDni(String dni) {
-        this.dni = dni;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public Direccion getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(Direccion direccion) {
-        this.direccion = direccion;
-    }
+    public void setIdPersona(int idPersona) { this.idPersona = idPersona; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+    public void setApellido(String apellido) { this.apellido = apellido; }
+    public void setDni(String dni) { this.dni = dni; }
+    public void setEmail(String email) { this.email = email; }
+    public void setTelefono(String telefono) { this.telefono = telefono; }
+    public void setDireccion(Direccion direccion) { this.direccion = direccion; }
 }
