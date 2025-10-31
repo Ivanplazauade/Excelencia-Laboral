@@ -1,6 +1,5 @@
 package modelo.Clases;
 
-import modelo.Cliente;
 import modelo.Postulacion;
 import modelo.enums.EstadoVacante;
 
@@ -31,7 +30,7 @@ public class ProcesoSeleccion {
         this.estado = EstadoVacante.ABIERTA;
         this.skillsRequeridas = (skillsRequeridas != null) ? skillsRequeridas : new ArrayList<>();
         this.postulaciones = new ArrayList<>();
-        this.vacantesDisponibles = 1; // por defecto
+        this.vacantesDisponibles = 1;
     }
 
     // ======= Getters y Setters =======
@@ -40,15 +39,26 @@ public class ProcesoSeleccion {
     public String getDescripcion() { return descripcion; }
     public LocalDate getFechaApertura() { return fechaApertura; }
     public EstadoVacante getEstado() { return estado; }
+    public Cliente getCliente() { return cliente; }
+    public Empleado getResponsable() { return responsable; }
     public List<Skill> getSkillsRequeridas() { return skillsRequeridas; }
     public List<Postulacion> getPostulaciones() { return postulaciones; }
-
     public String getUbicacion() { return ubicacion; }
     public double getSalarioMin() { return salarioMin; }
     public double getSalarioMax() { return salarioMax; }
     public int getVacantesDisponibles() { return vacantesDisponibles; }
 
+    public void setCliente(Cliente cliente) { this.cliente = cliente; }
+    public void setResponsable(Empleado responsable) { this.responsable = responsable; }
+    public void setEstado(EstadoVacante estado) { this.estado = estado; }
     public void setUbicacion(String ubicacion) { this.ubicacion = ubicacion; }
+    public void setId(int id) {
+        this.idProceso = id;
+    }
+    public void setFechaApertura(LocalDate fechaApertura) {
+        this.fechaApertura = fechaApertura;
+    }
+
     public void setRangoSalarial(double min, double max) {
         this.salarioMin = min;
         this.salarioMax = max;
@@ -57,15 +67,20 @@ public class ProcesoSeleccion {
 
     // ======= Lógica del proceso =======
     public void agregarPostulacion(Postulacion p) {
-        postulaciones.add(p);
+        if (p != null) postulaciones.add(p);
     }
 
     public void cerrarProceso() {
-        this.estado = EstadoVacante.CERRADO;
+        this.estado = EstadoVacante.CERRADA;
     }
 
     public void decrementarVacantes() {
         if (vacantesDisponibles > 0) vacantesDisponibles--;
         if (vacantesDisponibles == 0) cerrarProceso();
+    }
+
+    @Override
+    public String toString() {
+        return "Proceso #" + idProceso + " - Puesto: " + puesto + " (" + estado + ")";
     }
 }

@@ -9,6 +9,9 @@ public class Skill {
     private NivelSkill nivelRequerido;
 
     public Skill(String nombre, NivelSkill nivel) {
+        this.nombre = nombre;
+        this.nivelRequerido = nivel;
+        this.idSkill = 0; // Por defecto, hasta que sea persistido
     }
 
     public Skill(String nombre, int idSkill, String descripcion, NivelSkill nivelRequerido) {
@@ -18,35 +21,22 @@ public class Skill {
         this.nivelRequerido = nivelRequerido;
     }
 
-    public int getIdSkill() {
-        return idSkill;
+
+
+    @Override
+    public String toString() {
+        return nombre + " (" + nivelRequerido + ")";
     }
 
-    public void setIdSkill(int idSkill) {
-        this.idSkill = idSkill;
-    }
+    public int getIdSkill() { return idSkill; }
+    public void setIdSkill(int idSkill) { this.idSkill = idSkill; }
 
-    public String getNombre() {
-        return nombre;
-    }
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+    public String getDescripcion() { return descripcion; }
+    public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
 
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public NivelSkill getNivelRequerido() {
-        return nivelRequerido;
-    }
-
-    public void setNivelRequerido(NivelSkill nivelRequerido) {
-        this.nivelRequerido = nivelRequerido;
-    }
+    public NivelSkill getNivelRequerido() { return nivelRequerido; }
+    public void setNivelRequerido(NivelSkill nivelRequerido) { this.nivelRequerido = nivelRequerido; }
 }

@@ -1,7 +1,7 @@
 package excepciones;
 
-public class EdadInvalidaException extends RuntimeException {
-    public EdadInvalidaException(String message) {
-        super(message);
+public class EdadInvalidaException extends Exception {
+    public EdadInvalidaException(String mensaje) {
+        super(mensaje);
     }
 }

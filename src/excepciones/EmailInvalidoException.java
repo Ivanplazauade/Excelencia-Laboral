@@ -1,7 +1,7 @@
 package excepciones;
 
-public class EmailInvalidoException extends RuntimeException {
-    public EmailInvalidoException(String message) {
-        super(message);
+public class EmailInvalidoException extends Exception {
+    public EmailInvalidoException(String mensaje) {
+        super(mensaje);
     }
 }
