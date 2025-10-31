@@ -1,4 +1,4 @@
-package Clases;
+package modelo.Clases;
 
 public class Direccion {
     private final String calle;

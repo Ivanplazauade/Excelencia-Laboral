@@ -1,4 +1,6 @@
-package Clases;
+package modelo.Clases;
+
+import modelo.enums.Rol;
 
 public class Usuario {
     private String username;
