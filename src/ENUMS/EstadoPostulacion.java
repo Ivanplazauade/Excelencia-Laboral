@@ -1,5 +1,0 @@
-package ENUMS;
-
-public enum EstadoPostulacion {
-    POSTULADO, PRESELECCIONADO, ENTREVISTA, RECHAZADO, OFERTADO, CONTRATADO
-}

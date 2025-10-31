@@ -1,4 +1,4 @@
-package Clases;
+package modelo.Clases;
 
 import java.util.List;
 

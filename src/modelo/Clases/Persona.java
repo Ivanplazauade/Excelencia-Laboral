@@ -1,4 +1,4 @@
-package Clases;
+package modelo.Clases;
 
 public abstract class  Persona {
     //Atributos de cada persona
@@ -9,6 +9,10 @@ public abstract class  Persona {
     protected String email;
     protected String telefono;
     protected Direccion direccion;
+
+    public Persona(int id, String nombre, String apellido, String email, Direccion direccion) {
+    }
+
 
     //Metodos posibles
     public abstract String getNombreCompleto();
