@@ -14,11 +14,13 @@ import java.time.format.DateTimeParseException;
 import java.util.List;
 
 public class VistaPostulante extends JInternalFrame {
-
+    private JPanel panelCandidato;
     private JTextField txtId, txtNombre, txtApellido, txtDni, txtEmail, txtFechaNac;
-    private JButton btnGuardar, btnNuevo, btnBuscar;
+    private JTextField txtDireccion, txtTelefono, txtCiudad, txtProvincia, txtCalle, txtNumero, txtCV, txtCodigoPostal;
+    private JButton btnGuardar, btnNuevo, btnBuscar, btnVolver;
     private JList<Postulante> listaPostulantes;
     private PostulanteService service;
+    private JTextArea txtResultado;
 
     public VistaPostulante() {
         super("Gestión de Postulantes", true, true, true, true);

@@ -67,4 +67,11 @@ public class Postulante extends Persona {
 
     public List<Skill> getSkills() { return Collections.unmodifiableList(skills); }
     public List<ExperienciaLaboral> getExperiencias() { return Collections.unmodifiableList(experiencias); }
+
+    @Override
+    public String toString() {
+        return   "ID" + idPersona +" Nombre:'" + nombre + ' ' + apellido + '\'' + ", dni:'" + dni + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }

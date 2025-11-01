@@ -22,6 +22,9 @@ public class ProcesoSeleccion {
     private double salarioMax;
     private int vacantesDisponibles;
 
+    public ProcesoSeleccion() {
+    }
+
     public ProcesoSeleccion(int id, String puesto, String descripcion, List<Skill> skillsRequeridas) {
         this.idProceso = id;
         this.puesto = puesto;

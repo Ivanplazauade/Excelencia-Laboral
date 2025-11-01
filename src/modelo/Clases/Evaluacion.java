@@ -21,7 +21,7 @@ public class Evaluacion {
     }
 
     public boolean esAprobado() {
-        return this.resultado == ResultadoEntrevista.APROBADO;
+        return resultado == ResultadoEntrevista.APROBADO;
     }
 
     public int getIdEvaluacion() { return idEvaluacion; }

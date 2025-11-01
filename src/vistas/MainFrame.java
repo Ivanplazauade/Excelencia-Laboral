@@ -9,7 +9,7 @@ public class MainFrame extends JFrame {
     private JDesktopPane desktopPane;
 
     public MainFrame() {
-        setTitle("Sistema de Gestión de Talento - ExcellenceCorp");
+        setTitle("Sistema de Gestión de Talento - Excelencia Laboral");
         setSize(1000, 750);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
