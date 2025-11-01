@@ -116,15 +116,7 @@
 - **Recursos seguros:** **`try-with-resources`** en lectura/escritura para evitar fugas y cerrar flujos automáticamente.
 - **Abstracción DB:** una futura implementación (p. ej., JDBC/JPA) puede añadirse sin tocar la capa de negocio.
 
-**Ejemplo (CSV, try-with-resources):**
-```java
-try (BufferedReader br = Files.newBufferedReader(ruta, StandardCharsets.UTF_8)) {
-    String linea;
-    while ((linea = br.readLine()) != null) {
-        // parsear y mapear a entidad
-    }
-}
-```
+
 
 ---
 
